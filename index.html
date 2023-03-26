@@ -4,29 +4,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Запрос отклонен</title>
-<style>
-body {
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    display: flex;
-    margin: 0;
-    height: 100vh;
+    <title>getTitle()</title>
+    <link rel="stylesheet" href="css/style.css">
 
-    text-align: center;    
-    justify-content: center;
-    align-items: center;
-} code {
-    font-size: 18px;
-}
-
-</style>
 </head>
 <body>
-    <div class="">
-        <h1>Доступ ограничен</h1>
-        <code>Сервер недоступен или сайт не добавлен на сервер</code>
-    </div>
+    <header>
+        <div class="hdm">
+            <div class="hdml">
+                <h4 class="hdml-title">getTitle()</h4>
+                <a href="#" class="hdml-el text" id="t:headerel_about"></a>
+                <a href="#ptv" class="hdml-el text" id="t:headerel_photo"></a>
+                <a href="#" class="hdml-el text" id="t:headerel_unknown"></a>
+
+            </div>
+            <span class="hdml-el text" id="t:header_lang" onclick="changeLang()"></span>
+        </div>
+    </header>
+    <section class="f1">
+        <div class="f1data">
+            <div class="f1datatext">
+                <h3 style="font-weight: normal" class="text" id="t:city_shortdeskr"></h3>
+                <h1 class="f1title text" id="t:city_titlename"></h1>
+            </div>
+        </div>
+    
+    </section>
+    <section class="ptv" id="ptv">
+        <h1 class="text" id="t:rcmt"></h1>
+        <p class="text", id="t:rcmds"></p>
+
+        
+        
+        </div>
+    </section>
+
+
+<script src="js/texts.js"></script>
+<script>
+if (window.location.search != ''){
+    var lang = window.location.search.slice(1)
+} else {
+    var lang = 'en'
+}
+function changeLang() {
+    if (lang == 'ru'){lang = 'en'}
+    else {lang = 'ru'}
+    window.location.search = lang
+}
+
+function setTexts() {
+    for (let i = 0; i < document.getElementsByClassName('text').length; i++) {
+        const element = document.getElementsByClassName('text')[i];
+        if (element.id[1] == ':'){
+            data = element.id.split(':')
+            element.innerHTML = settext(data[0], data[1])
+        }
+        
+    }
+}
+setTexts()
+function settext(type, id) {
+    console.log(type, id);
+    try {
+        if (type == 't') {
+            return texts[id][lang]
+        } if (type == 'p') {
+            return post[id][lang]
+        } 
+    } catch { return 'undefined'}
+}
+function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
+function postimg(path, width = false){
+    if (width) {style = 'max-width: '+width+'px'}
+    else {style = ''}
+    return `<img src="media/${path}" alt="" class="pvimg" style="${style}">`
+}
+
+function openpost(id, title){
+    text = posts[id][lang]
+    // title = posts[id].title.ru
+    document.body.innerHTML += `<div class="post" id="post-${id}" style="animation: postappear .6s;">
+        <div class="postvis">
+            <div class="pvtname">
+                <h1 class="pvttitle">${title}</h1>
+                <span class="pvtclose" onclick="closepost('${id}')">${settext('t','close')}</span>
+            </div>
+            <div class="pvdata">${text}</div>
+        </div>
+    </div>`
+    document.body.style.overflowY = 'hidden'
+} 
+async function closepost(id) {
+    x = document.getElementById('post-'+id)
+    x.offsetWidth
+    x.style.animation = 'postdisappear .6s'
+    document.body.style.overflowY = 'auto'
+    await sleep(550)        
+    x.remove()
+} 
+function loadpostsprev(){
+    inner = ''
+    for (let i = 0; i < recommendplaces.length; i++) {
+        const r = recommendplaces[i];
+        // console.log(r.title.ru);
+        inner += '<div class="ptvrct">'+r.title[lang]+'</div><div class="ptvl">'
+        for (let j = 0; j < r.elements.length; j++) {
+            const p = r.elements[j];
+            title = p[lang]
+            inner += `<div class="ptvl-el" onclick="openpost('${p.id}', '${title}')">
+                <div id="p1" class="ptvl-el-img" style="background: url('media/${p.preview}');background-size: cover; ">
+                    <h3 class="ptvl-el-text">${title}</h3>
+                </div>
+                <span class="ptvl-el-btn">${settext('t','cfmi')}</span>
+            </div>    `
+            console.log(p.id)
+            
+        }
+
+        inner += '</div>'
+    }
+
+    document.getElementById('ptv').innerHTML+=inner
+}
+loadpostsprev()
+
+
+
+</script>
+
 </body>
 </html>
