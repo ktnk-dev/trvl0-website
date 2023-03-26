@@ -69,7 +69,7 @@ body {
     font-size: 50px;
 } .f1data {
     height: 100%;
-    background: url('media/head.jpg') #fff;
+    background: url('../media/head.jpg') #fff;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
