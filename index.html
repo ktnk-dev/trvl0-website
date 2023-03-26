@@ -9,18 +9,42 @@
 
 </head>
 <body>
-    <header>
-        <div class="hdm">
-            <div class="hdml">
+    <header class="header-pc">
+        <div class="hdm ">
+            <div class="hdml hdmll" id=":hdmlist">
                 <h4 class="hdml-title">getTitle()</h4>
-                <a href="#" class="hdml-el text" id="t:headerel_about"></a>
-                <a href="#ptv" class="hdml-el text" id="t:headerel_photo"></a>
-                <a href="#" class="hdml-el text" id="t:headerel_unknown"></a>
 
             </div>
             <span class="hdml-el text" id="t:header_lang" onclick="changeLang()"></span>
         </div>
     </header>
+    <header class="header-mobile">
+        <div class="hdm">
+            <h4 class="hdml-title">getTitle()</h4>
+            <div class="hdml">
+                <a class="hdml-el text" id="t:header_menubutton" onclick="openMenu()"></a>
+                
+
+            </div>
+            <span class="hdml-el text" id="t:header_lang" onclick="changeLang()"></span>
+        </div>
+    </header>
+
+    <div class="headeradv">
+
+        <div class="headeradv-topv">
+            <h4 class="hdml-titled">getTitle()</h4>
+            <span class="hdml-el text" id="t:header_lang" onclick="changeLang()" style="margin-right: 14px;"></span>
+            
+        </div>
+        <h3 class="text" style="text-align: center;" id="t:menutext"></h3>
+        <div class="hdml hdmll" id=":hdmlist">
+            <!-- <h4 class="hdml-title">getTitle()</h4> -->
+
+
+        </div>
+    </div>
+
     <section class="f1">
         <div class="f1data">
             <div class="f1datatext">
@@ -33,10 +57,6 @@
     <section class="ptv" id="ptv">
         <h1 class="text" id="t:rcmt"></h1>
         <p class="text", id="t:rcmds"></p>
-
-        
-        
-        </div>
     </section>
 
 
@@ -45,7 +65,7 @@
 if (window.location.search != ''){
     var lang = window.location.search.slice(1)
 } else {
-    var lang = 'en'
+    var lang = 'ru'
 }
 function changeLang() {
     if (lang == 'ru'){lang = 'en'}
@@ -63,6 +83,8 @@ function setTexts() {
         
     }
 }
+loadHeader()
+
 setTexts()
 function settext(type, id) {
     console.log(type, id);
@@ -127,9 +149,38 @@ function loadpostsprev(){
 
     document.getElementById('ptv').innerHTML+=inner
 }
+function loadHeader(){
+    for (let i = 0; i < header.length; i++) {
+        const h = header[i];
+        console.log(h);
+        for (let j = 0; j < document.getElementsByClassName('hdmll').length; j++) {
+            document.getElementsByClassName('hdmll')[j].innerHTML += `<a href="${h.dir}" class="hdml-el text" id="t:${h.id}" onclick="closeMenu('${h.dir}')"></a>`;
+            
+        }
+        
+    }
+}
 loadpostsprev()
+function openMenu(){
+    x = document.getElementsByClassName('headeradv')[0]
+    x.style.display = 'flex'
+    x.style.overflowY = 'scroll'
+    x.style.animation = 'postappear .6s'
+    x.offsetWidth
+    // document.body.style.overflowY = 'hidden'
 
+}
+async function closeMenu(){
+    x = document.getElementsByClassName('headeradv')[0]
+    x.offsetWidth
+    x.style.animation = 'postdisappear .6s'
+    document.body.style.overflowY = 'auto'
+    await sleep(550)
+    x.style.overflowY = 'hidden'
 
+    x.style.display = 'none'
+
+}
 
 </script>
 

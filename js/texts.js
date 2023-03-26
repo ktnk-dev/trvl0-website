@@ -31,7 +31,7 @@ texts = {
     }, 
     headerel_photo: {
         ru: 'Фотопутеводитель',
-        en: 'Photo guide'
+        en: 'Photo-guide'
     },
     
 
@@ -51,6 +51,14 @@ texts = {
     close: {
         ru: 'Закрыть',
         en: 'Close'
+    },
+    closemenu: {
+        ru: 'Закрыть меню',
+        en: 'Close menu'
+    },
+    menutext: {
+        ru: 'Перемещение по сайту',
+        en: 'Site navigation'
     },
 
     rcmt: {
@@ -270,3 +278,18 @@ translations_ids = [
     },
 ]
 
+header = [
+    {
+        id: 'headerel_about',
+        dir: '#'
+    },
+    {
+        id: 'headerel_photo',
+        dir: '#ptv'
+    },
+    {
+        id: 'headerel_undefined',
+        dir: '#'
+    },
+    
+]
