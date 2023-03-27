@@ -6,8 +6,8 @@ function postimg(path, width = false){
 
 texts = {
     header_lang: {
-        ru: 'English 🇬🇧',
-        en: 'Русский 🇷🇺'
+        ru: 'English version 🇬🇧',
+        en: 'Версия на Русском 🇷🇺'
     },
     header_menubutton: {
         ru: 'Меню',
@@ -38,7 +38,7 @@ texts = {
 
     city_titlename: {
         ru: 'Абрау-Дюрсо',
-        en: 'Abrau-Durco'
+        en: 'Abrau-Durso'
     },
     city_shortdeskr: {
         ru: 'Добро пожаловать в',
@@ -66,8 +66,10 @@ texts = {
         en: 'Photo-guide around Abrau-Durso through the photo. One day in Abrau-Durso.'
     },
     rcmds: {
-        ru: 'Вечером Абрау вбирает в себя всё волшебство и становится еще более притягательным и надолго запоминающимся местом. Чтобы провести прекрасно вечер за ужином и получить массу положительных эмоций, туристам предлагается посетить знаменитые места Абрау',
-        en: 'In the evening, Abrau absorbs all the magic and becomes even more attractive and memorable place. A lot of tourists are invited in Abrau-Durso to spend an unforgettable evening visiting such famous restaurants as'
+        ru: `Полагают, что озеро Абрау образовалось на месте обрыва, глубокого провала, в то время как речка Дюрсо, протекающая за перевалом, питается четырьмя источниками. Отсюда и пошло название Абрау-Дюрсо: в переводе с черкесского «Абрау» означает «обрыв», а «Дюрсо» - «четыре воды».
+        Если вы хотите провести один день в Абрау, то предлагаем вам увлекательную программу, разбитую на 3 части: утро, день и вечер. Мы уверены, что вы проведёте день великолепно и захотите возвращаться сюда снова и снова.`,
+        en: `It is believed that Lake Abrau was formed on the site of a cliff, a deep failure, while the Durso River, which flows behind the pass, is fed by four sources. The name Abrau-Dyurso came from Circassian "Abrau" means "cliff", and "Dyurso" - "four waters".
+        If you want to spend one day in Abrau, we offer you an exciting program divided into three parts: morning, afternoon and evening. We are sure that you will have a great day and would like to come back here again and again.`
     }
 
 }
@@ -202,55 +204,18 @@ posts = {
 recommendplaces = [
     {
         title: {
-            ru: 'Рекомендуемые рестораны и отели',
-            en: 'Recommended restaurants and hotels'
+            ru: 'День',
+            en: 'Day'
+        }, 
+        text: {
+            ru: '',
+            en: ''
         },
-        
         elements: [
             {
-                ru: 'Ресторан “Вилла Роз”',
-                en: '“Villa Roz” restaurant',
-                preview: 'vr1.jpg',
-                id: 'vr'
-            },
-            {
-                ru: 'Гранд–кафе “Абрау-Дюрсо”',
-                en: 'Grand-Cafe “Abrau-Durso”.',
-                preview: 'gcabT.jpg',
-                id: 'gcab'
-            },
-            {
-                ru: 'Уадьба “Круглое Озеро”',
+                ru: 'Уcадьба “Круглое Озеро”',
                 preview: 'uclt.jpg',
                 id: 'ucl'
-            },
-
-        ]
-
-    }, 
-    {
-        title: {
-            ru: 'Красивые и исторические места',
-            en: 'Beautiful and historical places'
-        }, 
-        elements: [
-            {
-                ru: 'Галлерея света Абрау',
-                en: 'Abrau Light Gallery',
-                preview: 'lgal.png',
-                id: 'lgal'
-            },
-            {
-                ru: 'Амфитеатр',
-                en: 'Abrau Amphitheatre',
-                preview: 'amfi.png',
-                id: 'amfi'
-            },
-            {
-                ru: 'Шоу фонтанов',
-                en: 'The Abrau Fountain Show',
-                preview: 'sf1.png',
-                id: 'sf'
             },
             {
                 ru: 'Озеро Бам',
@@ -264,7 +229,54 @@ recommendplaces = [
             }
 
         ]
-    }
+    },
+    {
+        title: {
+            // ru: 'Рекомендуемые рестораны и отели',
+            // en: 'Recommended restaurants and hotels',            
+            ru: 'Вечер',
+            en: 'Evening'
+        },
+        text: {
+            ru: 'Вечером Абрау вбирает в себя всё волшебство и становится еще более притягательным и надолго запоминающимся местом. Чтобы провести прекрасно вечер за ужином и получить массу положительных эмоций, туристам предлагается посетить знаменитые места Абрау',
+            en: 'In the evening, Abrau absorbs all the magic and becomes even more attractive and memorable place. A lot of tourists are invited in Abrau-Durso to spend an unforgettable evening visiting such famous restaurants as'
+        },
+        
+        elements: [
+            {
+                ru: 'Шоу фонтанов',
+                en: 'The Abrau Fountain Show',
+                preview: 'sf1.png',
+                id: 'sf'
+            },
+            {
+                ru: 'Ресторан “Вилла Роз”',
+                en: '“Villa Roz” restaurant',
+                preview: 'vr1.jpg',
+                id: 'vr'
+            },
+            {
+                ru: 'Гранд–кафе “Абрау-Дюрсо”',
+                en: 'Grand-Cafe “Abrau-Durso”',
+                preview: 'gcabT.jpg',
+                id: 'gcab'
+            },
+            
+            {
+                ru: 'Галлерея света Абрау',
+                en: 'Abrau Light Gallery',
+                preview: 'lgal.png',
+                id: 'lgal'
+            },
+            {
+                ru: 'Амфитеатр',
+                en: 'Abrau Amphitheatre',
+                preview: 'amfi.png',
+                id: 'amfi'
+            },
+        ]
+
+    }, 
 ]
 
 translations_ids = [
@@ -281,15 +293,12 @@ translations_ids = [
 header = [
     {
         id: 'headerel_about',
-        dir: '#'
+        dir: '#ptv'
     },
     {
         id: 'headerel_photo',
         dir: '#ptv'
     },
-    {
-        id: 'headerel_undefined',
-        dir: '#'
-    },
+
     
 ]

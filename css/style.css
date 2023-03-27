@@ -258,7 +258,7 @@ body {
         width: 80%;
     }
     .header-mobile {
-        display: flex;
+        /* display: flex; */
     }
     .header-pc {
         display: none;
@@ -285,4 +285,8 @@ body {
 } @keyframes postdisappear {
     0% {opacity: 1;}
     100% {opacity: 0;}
+}
+
+header {
+    display: none;
 }
