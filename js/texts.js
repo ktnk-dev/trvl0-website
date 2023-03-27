@@ -33,7 +33,10 @@ texts = {
         ru: 'Фотопутеводитель',
         en: 'Photo-guide'
     },
-    
+    title: {
+        ru: 'Фотопутеводитель по Абрау-Дюрсо',
+        en: 'Photo-guide around Abrau-Durso'
+    },
 
 
     city_titlename: {
