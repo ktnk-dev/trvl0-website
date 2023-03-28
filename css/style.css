@@ -64,9 +64,9 @@ body {
 .f1 {
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 55vh;
 } .f1title {
-    font-size: 50px;
+    font-size: 45px;
 } .f1data {
     height: 100%;
     background: url('../media/head.jpg') #fff;
@@ -105,7 +105,17 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 
-} 
+} .s {
+    background-color: #eee;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 0 10px 4px;
+} .sf {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 
 .ptvl-el {
     cursor: pointer;
@@ -289,4 +299,7 @@ body {
 
 header {
     display: none;
+}
+h3 {
+    margin-top: 15px;
 }
